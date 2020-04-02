@@ -1,4 +1,9 @@
 <?php
+/**
+ * @name 凭证填制/录入
+ * @desc 中国式财务凭证录入
+ * @author 吴俊杰(cocashu@gmail.com)
+*/
 header("Content-Type: text/html;charset=utf-8");
 require_once 'dbconfig.php';
 include 'Pinyin.php';
@@ -29,11 +34,11 @@ $count=count($row);//不能在循环语句中，由于每次删除 row数组长�
 
 }
 
-//echo json_encode($arr,JSON_UNESCAPED_UNICODE);
+echo json_encode($arr,JSON_UNESCAPED_UNICODE);
 
 // 把PHP数组转成JSON字符串 
-$json_string = json_encode($arr);
+//$json_string = json_encode($arr);
 // 写入文件
 
-file_put_contents('user.json', $json_string);
+//file_put_contents('user.json', $json_string);
 mysqli_close($mysql);
