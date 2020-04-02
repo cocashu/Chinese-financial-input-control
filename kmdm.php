@@ -1,4 +1,9 @@
 <?php
+/**
+ * @name 凭证填制/录入
+ * @desc 中国式财务凭证录入
+ * @author 吴俊杰(cocashu@gmail.com)
+*/
 header("Content-Type: text/html;charset=utf-8");
 require_once 'dbconfig.php';
 @$kmdm=$_GET['kmdm'];
