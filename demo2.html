@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+<head>
+    <title></title>
+</head>
+<style type="text/css">
+    table
+    {
+        float: left;
+        border-collapse: collapse; /*外边框-折叠：折叠*/
+        text-align: center; /*文本-对齐：居中*/
+        margin: 1px auto; /*内边框：上20px 右：自动*/
+    }
+    table caption
+    {
+        font-size: 0.5rem; /*字体-大小*/
+        font-weight: bolder; /*字体-重量：加粗*/
+        color: red; /*颜色：红色*/
+    }
+    table, tr, th
+    {
+        font-size: 0.5rem; /*字体-大小*/
+        border: 1px solid #CCCCCC;
+    }
+    th
+    {
+        padding: 1px;
+    }
+</style>
+
+<script>
+
+
+
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<body>
+<script src="${base}/common_res/js/jquery.js" type="text/javascript"></script>
+<script type="Text/JavaScript">
+$(document).ready(function(){
+    $(".tb_1 tr th").click(function() {
+     var tbid=($(this).parent('tr').attr('id')); 
+	var word = prompt("请输入金额","");
+		var td = event.target||event.srcElement;
+	    var tds = document.getElementById(tbid).getElementsByTagName('th');
+		  if(word%1 === 0) {
+  			// 无小数金额处理
+            var word=parseFloat(word);//去除小数点后面的数
+            var word=pad(word+'00',tds.length);//小数点前面的部分输出
+            var sl=word.length-1;
+            //元处理
+    		for (var i = 0; i < tds.length; i++) if (tds[sl-i].getAttribute('name')) tds[sl-i].innerHTML = word[sl-i];
+			}else{
+              //含小数的金额处理
+ 			var ab_num = parseInt(word.substring(0,word.indexOf('.')));
+              var ad_num = word.replace(/\d+\.(\d*)/, '$1');
+              if (ad_num.length==1){
+              ad_num=ad_num+'0';
+                }
+               if (ad_num.length>=2){
+              ad_num=ad_num.substring(2,0);
+                }
+              word=ab_num+ad_num;//数值拼接=删除小数点
+              var word=pad(word,tds.length);//不足长度占位符
+            var sl=word.length-1;
+            //元处理
+    		for (var i = 0; i < tds.length; i++) if (tds[sl-i].getAttribute('name')) tds[sl-i].innerHTML = word[sl-i];
+			}
+    });
+})
+/* 质朴长存法  by lifesinger */  //补位操作
+function pad(num, n) {  
+    var len = num.toString().length;  
+    while(len < n) {  
+        num = " " + num;  
+        len++;  
+    }  
+    return num;  
+}  
+</script>
+    <div >
+        <table class="tb_1" >
+            <tr  style="border-right-color: Green;">
+                <td colspan="11" >
+                    借方金额
+                </td>
+            </tr>
+            <tr>
+                <th style="border-left-color: Green;">
+                    亿
+                </th>
+                <th>
+                    千
+                </th>
+                <th style="border-right-color: Green;">
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th>
+                    万
+                </th>
+                <th style="border-right-color: Green;">
+                    千
+                </th>
+                <th>
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th style="border-right-color: Red;">
+                    元
+                </th>
+                <th>
+                    角
+                </th>
+                <th  style="border-right-color: Green;">
+                    分
+                </th>
+            </tr>
+            <tr id="jine1">
+               <th style="border-left-color: Green;" name="1">
+                   
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Red;" name="1">
+                    
+                </th>
+                <th name="1">
+                    
+                </th>
+                <th  style="border-right-color: Green;" name="1">
+                    &nbsp;
+                </th>
+            </tr>
+                  <tr id="jine3">
+               <th style="border-left-color: Green;" name="1">
+                   
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Red;" name="1">
+                    
+                </th>
+                <th name="1">
+                    
+                </th>
+                <th  style="border-right-color: Green;" name="1">
+                    &nbsp;
+                </th>
+            </tr>
+        </table>
+        <table class="tb_1">
+            <tr style="border-left-color: Green;">
+                <td colspan="11"  >
+                    贷方金额
+                </td>
+            </tr>
+            <tr>
+                <th style="border-left-color: Green;">
+                    亿
+                </th>
+                <th>
+                    千
+                </th>
+                <th style="border-right-color: Green;">
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th>
+                    万
+                </th>
+                <th style="border-right-color: Green;">
+                    千
+                </th>
+                <th>
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th style="border-right-color: Red;">
+                    元
+                </th>
+                <th>
+                    角
+                </th>
+                <th  style="border-right-color: Green;">
+                    分
+                </th>
+            </tr>
+              <tr id="jine2">
+               <th style="border-left-color: Green;" name="1">
+                   
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Red;" name="1">
+                    
+                </th>
+                <th name="1">
+                    
+                </th>
+                <th  style="border-right-color: Green;" name="1">
+                    &nbsp;
+                </th>
+            </tr>        <tr id="jine4">
+               <th style="border-left-color: Green;" name="1">
+                   
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Green;" name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th name="1">
+                     
+                </th>
+                <th style="border-right-color: Red;" name="1">
+                    
+                </th>
+                <th name="1">
+                    
+                </th>
+                <th  style="border-right-color: Green;" name="1">
+                    &nbsp;
+                </th>
+            </tr>
+        </table>
+    </div>
+
+</body>
+ </html>

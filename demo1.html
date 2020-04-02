@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <meta charset="UTF-8">
+<head>
+    <title>凭证填制/录入</title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script language="javascript" type="text/javascript">
+        function addRow() {
+            var newTR = document.getElementById("testTable").insertRow(document.getElementById("testTable").rows.length);
+            var newNameTD = newTR.insertCell(0);
+			var len = $('table tr').length;
+            newNameTD.innerHTML =len-2;
+            var newNameTD = newTR.insertCell(1);
+            newNameTD.innerHTML = "<input name='zhaiyao' id='zhaiyao' type='text' />";
+            var newNameTD = newTR.insertCell(2);
+            newNameTD.innerHTML = "<input name='zzkm' id='zzkm' type='text'   />";
+            var newNameTD = newTR.insertCell(3);
+            newNameTD.innerHTML = "<input name='mxkm' id='mxkm' type='text'    />";
+			var newNameTD = newTR.insertCell(4);
+            newNameTD.innerHTML = '';
+			var newNameTD = newTR.insertCell(5);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(6);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(7);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(8);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(9);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(10);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(11);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(12);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: Red;";
+			var newNameTD = newTR.insertCell(13);
+			newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(14);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(15);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-left-color: green;";
+			var newNameTD = newTR.insertCell(16);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(17);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(18);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(19);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(20);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(21);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(22);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(23);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: Red;";
+			var newNameTD = newTR.insertCell(24);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(25);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(26);
+            newNameTD.innerHTML = "<input name='jie' id='jie"+(len-2)+"' type='text' />";
+            var newNameTD = newTR.insertCell(27);
+            newNameTD.innerHTML = "<input name='dai' id='dai"+(len-2)+"' type='text'/>";
+        }
+
+    </script>
+   <script language="javascript" type="text/javascript">
+   $(function(){
+        //打开页面默认添加10行
+        for(var i = 1;i<11;i++){
+		var newTR = document.getElementById("testTable").insertRow(document.getElementById("testTable").rows.length);
+		var len = $('table tr').length;
+		newTR.id = "jine" + (len-2);
+          var newNameTD = newTR.insertCell(0);
+		 
+			
+            newNameTD.innerHTML =len-2;
+            var newNameTD = newTR.insertCell(1);
+            newNameTD.innerHTML = "<input name='zhaiyao' list='zhaiyao1' id='zhaiyao' type='text' />";
+            var newNameTD = newTR.insertCell(2);
+            newNameTD.innerHTML = "<input name='zzkm' list='zongzhang' id='zzkm' type='text' oninput='inputgaibian()' />";
+            var newNameTD = newTR.insertCell(3);
+            newNameTD.innerHTML = "<input name='mxkm' list='mingxi' id='mxkm' type='text'  />";
+			var newNameTD = newTR.insertCell(4);
+            newNameTD.innerHTML = '';
+			newNameTD.id="jie";
+			var newNameTD = newTR.insertCell(5);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(6);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(7);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(8);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(9);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(10);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(11);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(12);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: Red;";
+			var newNameTD = newTR.insertCell(13);
+			newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(14);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(15);
+            newNameTD.innerHTML = "";
+			newNameTD.id="dai";
+			newNameTD.style.cssText="border-left-color: green;";
+			var newNameTD = newTR.insertCell(16);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(17);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(18);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(19);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(20);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: green;";
+			var newNameTD = newTR.insertCell(21);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(22);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(23);
+            newNameTD.innerHTML = "";
+			newNameTD.style.cssText="border-right-color: Red;";
+			var newNameTD = newTR.insertCell(24);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(25);
+            newNameTD.innerHTML = "";
+			var newNameTD = newTR.insertCell(26);
+            newNameTD.innerHTML = "<input name='jie' id='jie"+(len-2)+"' type='text' />";
+            var newNameTD = newTR.insertCell(27);
+            newNameTD.innerHTML = "<input name='dai' id='dai"+(len-2)+"' type='text'/>";
+        }
+            
+});
+   </script>
+  
+   <style type="text/css">
+    table
+    {
+        float: left;
+        border-collapse: collapse; /*外边框-折叠：折叠*/
+        text-align: center; /*文本-对齐：居中*/
+        margin: 1px auto; /*内边框：上20px 右：自动*/
+    }
+    table caption
+    {
+        font-size: 0.5rem; /*字体-大小*/
+        font-weight: bolder; /*字体-重量：加粗*/
+        color: red; /*颜色：红色*/
+    }
+    table, tr, th
+    {
+        font-size: 0.5rem; /*字体-大小*/
+        border: 1px solid #CCCCCC;
+    }
+    th
+    {
+        padding: 1px;
+    }
+</style>
+</head>
+<body>
+
+    <div>
+        <table id="testTable" border='1' cellspacing="1" class="bbs">
+            <tr>
+                <th rowspan="2">
+                    序号
+                </th>
+                <th width=150 rowspan="2">
+                    摘要
+                </th>
+                <th width=150 rowspan="2">
+                    总帐科目
+                </th>
+                <th width=150 rowspan="2">
+                    明细科目
+                </th>
+	              <th style="border-right-color: Green;" colspan="11" >
+                借方金额
+                </th>
+       
+				  <th style="border-left-color: Green;" colspan="11" >
+             贷方金额
+                </th>
+            </tr>
+              <tr>
+       
+	              <th style="border-left-color: Green;">
+                    亿
+                </th>
+                <th>
+                    千
+                </th>
+                <th style="border-right-color: Green;">
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th>
+                    万
+                </th>
+                <th style="border-right-color: Green;">
+                    千
+                </th>
+                <th>
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th style="border-right-color: Red;">
+                    元
+                </th>
+                <th>
+                    角
+                </th>
+                <th  style="border-right-color: Green;">
+                    分
+                </th>
+       
+				  <th style="border-left-color: Green;">
+                    亿
+                </th>
+                <th>
+                    千
+                </th>
+                <th style="border-right-color: Green;">
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th>
+                    万
+                </th>
+                <th style="border-right-color: Green;">
+                    千
+                </th>
+                <th>
+                    百
+                </th>
+                <th>
+                    十
+                </th>
+                <th style="border-right-color: Red;">
+                    元
+                </th>
+                <th>
+                    角
+                </th>
+                <th  style="border-right-color: Green;">
+                    分
+                </th>
+            </tr>
+						
+        </table>
+        
+    </div>
+<datalist id="zhaiyao1">
+    <option value='0'>等待刷新</option>
+
+</datalist> 
+<datalist id="zongzhang"><option value="1002">银行存款</option><option value="1601">固定资产</option><option value="应付利息">2231</option><option value="累计摊销">1702</option><option value="无形资产减值准备">1703</option><option value="商誉">1711</option><option value="长期待摊费用">1801</option><option value="待摊费用">1802</option><option value="递延所得税资产">1811</option><option value="待处理财产损益">1901</option><option value="短期借款">2001</option><option value="应付票据">2201</option><option value="应付账款">2202</option><option value="预收账款">2203</option><option value="应付职工薪酬">2211</option><option value="应交税费">2221</option><option value="应付股利">2232</option><option value="其他应付款">2241</option><option value="坏账准备">1231</option><option value="委托代销商品">1261</option><option value="库存商品">1405</option><option value="存货跌价准备">1471</option><option value="长期股权投资">1511</option><option value="长期股权投资减值准备">1512</option><option value="投资性房地产">1521</option><option value="投资性房地产累计折旧">1522</option><option value="投资性房地产减值准备">1523</option><option value="长期应收款">1531</option><option value="累计折旧">1602</option><option value="固定资产减值准备">1603</option><option value="在建工程">1604</option><option value="固定资产清理">1606</option><option value="无形资产">1701</option><option value="预付账款">1123</option><option value="应收票据">1121</option><option value="应收账款">1122</option><option value="应收股利">1131</option><option value="应收利息">1132</option><option value="其他应收款">1221</option><option value="库存现金">1001</option><option value="递延收益">2401</option><option value="长期借款">2501</option><option value="长期应付款">2701</option><option value="预计负债">2801</option><option value="递延所得税负债">2901</option><option value="实收资本">4001</option><option value="资本公积">4002</option><option value="盈余公积">4101</option><option value="本年利润">4103</option><option value="利润分配">4104</option><option value="主营业务收入">6001</option><option value="利息收入">6011</option><option value="手续费及佣金收入">6021</option><option value="租赁收入">6041</option><option value="其他业务收入">6051</option><option value="其他收益">6061</option><option value="公允价值损益">6101</option><option value="投资收益">6111</option><option value="营业外收入">6301</option><option value="主营业务成本">6401</option><option value="其他业务支出">6402</option><option value="税金及附加">6403</option><option value="利息支出">6411</option><option value="手续费及佣金支出">6421</option><option value="销售费用">6601</option><option value="管理费用">6602</option><option value="财务费用">6603</option><option value="资产减值损失">6701</option><option value="营业外支出">6711</option><option value="所得税费用">6801</option><option value="以前年度损益调整">6901</option></datalist>
+
+</datalist> 
+<datalist id="mingxi">
+    <option value='0'>总帐科目未选择</option>
+
+</datalist>  
+<script type="text/javascript">
+$.ajax({
+//取得input输入内容
+    url:"http://127.0.0.1/zhaiyao.php", //url跳转到指定的处理页面
+    dataType:"JSON", //返回JSON数据类型，返回的是二维数组
+    success: function(data){
+        var str ="";  //先定义一个空的数组str
+	for(var s in data){ //定义一个变量 s代表索引 in data初始值，进循环才有值
+        str = str+"<option value='"+data[s].摘要+"'>"+data[s].拼音+"</option>"; //求data循环出来的索引[s]，取出Code列，显示出循环出来的Name列
+            
+        }
+        $("#zhaiyao1").html(str); //$("")找到下拉，将求出来的Name列值放到下拉列表中
+        
+    }
+
+})
+
+</script>
+<script type="text/javascript">
+    function inputgaibian(val) {
+        var a = document.getElementById("zzkm").value;
+		url="http://127.0.0.1/kmdm.php?kmdm="+a, //url跳转到指定的处理页面
+        alert(url);
+
+    }
+
+
+
+</script>
+  <div> <input type="button" id="aaa" value="添加行" onclick="addRow();" /></div>
+  <script type="Text/JavaScript">
+$(document).ready(function(){
+    $(".bbs tr td").dblclick(function() {//dblclick改成click 即为单击事件
+    var tbid=($(this).parent('tr').attr('id'));  
+	var jie1 = prompt("借方金额","");
+	var dai1 = prompt("贷方金额","");
+	var td = event.target||event.srcElement;
+	var tds = document.getElementById(tbid).getElementsByTagName('td');
+    var jie=pad(jie1+'00',11);//小数点前面的部分输出
+	var dai=pad(dai1+'00',11);//小数点前面的部分输出
+	//for (var i = 4; i < 15; i++) {tds[i].innerHTML = jie[i-4];}
+	for (var i = 15; i < 26; i++) {tds[i].innerHTML = dai[i-15];}
+	//借方金额处理
+	if(jie1%1 === 0) {
+	//整数处理
+		var word=jie1;
+		var word=parseFloat(word);//去除小数点后面的数
+		var word=pad(word+'00',11);//小数点前面的部分输出
+	  for (var i = 4; i < 15; i++) {tds[i].innerHTML = word[i-4];}
+	 }else{
+    //双精度处理
+		var word=jie1;
+		var ab_num = parseInt(word.substring(0,word.indexOf('.')));
+        var ad_num = word.replace(/\d+\.(\d*)/, '$1');
+        if (ad_num.length==1){
+            ad_num=ad_num+'0';}
+        if (ad_num.length>=2){
+            ad_num=ad_num.substring(2,0);}
+        word=ab_num+ad_num;//数值拼接=删除小数点
+        var word=pad(word,11);//不足长度占位符
+		for (var i = 1; i < 15; i++) {tds[i].innerHTML = word[i-4];} 
+	 }
+	 //贷方金额处理
+	 if(dai1%1 === 0) {
+	//整数处理
+		var word=dai1;
+		var word=parseFloat(word);//去除小数点后面的数
+		var word=pad(word+'00',11);//小数点前面的部分输出
+	  for (var i = 15; i < 26; i++) {tds[i].innerHTML = word[i-15];}
+	 }else{
+    //双精度处理
+		var word=dai1;
+		var ab_num = parseInt(word.substring(0,word.indexOf('.')));
+        var ad_num = word.replace(/\d+\.(\d*)/, '$1');
+        if (ad_num.length==1){
+            ad_num=ad_num+'0';}
+        if (ad_num.length>=2){
+            ad_num=ad_num.substring(2,0);}
+        word=ab_num+ad_num;//数值拼接=删除小数点
+        var word=pad(word,11);//不足长度占位符
+		for (var i = 15; i < 26; i++) {tds[i].innerHTML = word[i-15];}
+	 }
+	  if(jie1.replace(/(^s*)|(s*$)/g, "").length ==0) {
+	  word='000';//数值拼接=删除小数点
+        var word=pad(word,11);//不足长度占位符
+		for (var i = 4; i < 15; i++) {tds[i].innerHTML = word[i-4];}
+	  }
+	  if(dai1.replace(/(^s*)|(s*$)/g, "").length ==0) {
+	  word='000';//数值拼接=删除小数点
+        var word=pad(word,11);//不足长度占位符
+		for (var i = 15; i < 26; i++) {tds[i].innerHTML = word[i-15];}
+	  }
+	 //input 赋值
+	document.getElementById('jie'+Letter(tbid)).value = jie1;
+	document.getElementById('dai'+Letter(tbid)).value = dai1;
+    });
+})
+/* 质朴长存法  by lifesinger */  //补位操作
+function pad(num, n) {  
+    var len = num.toString().length;  
+    while(len < n) {  
+        num = " " + num;  
+        len++;  
+    }  
+    return num;  
+}  
+function Letter(str) {
+  var result;
+  var reg = /[a-zA-Z]+/;  //[a-zA-Z]表示匹配字母，g表示全局匹配
+  while (result = str.match(reg)) { //判断str.match(reg)是否没有字母了
+    str = str.replace(result[0], ''); //替换掉字母  result[0] 是 str.match(reg)匹配到的字母
+  }
+  return str;
+}
+
+</script>
+
+</body>
+</html>
