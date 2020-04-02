@@ -5,5 +5,6 @@
 
 ![](https://github.com/cocashu/Chinese-financial-input-control/raw/master/demo1.jpg)  
 控件演示地址http://wujunjie.net/html/demo1/index5.html<br>
+![](https://github.com/cocashu/Chinese-financial-input-control/raw/master/demo2.jpg) 
 整体演示地址http://wujunjie.net/html/demo1/<br>
 代码比较乱，大侠请忽略
